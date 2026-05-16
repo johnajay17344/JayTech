@@ -1,0 +1,164 @@
+.section {
+  background-color: #0a0a0a;
+  padding: 80px 40px 100px;
+  min-height: 100vh;
+}
+ 
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #00D4FF;
+  margin-bottom: 60px;
+  letter-spacing: 0.5px;
+}
+ 
+/* ── Timeline container ── */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+ 
+/* vertical line */
+.line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #11d6fd 8%, #00D4FF 92%, transparent);
+  transform: translateX(-50%);
+}
+ 
+/* ── Each timeline row ── */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 32px 1fr;
+  align-items: center;
+  margin-bottom: 64px;
+  position: relative;
+}
+ 
+/* dot sits in the middle column */
+.dotWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+ 
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00D4FF;
+  box-shadow: 0 0 10px #00D4FF66;
+  flex-shrink: 0;
+}
+ 
+.spacer {
+  /* fills the opposite half */
+}
+ 
+/* ── Cards ── */
+.card {
+  position: relative;
+  background: #ffffff0d;
+  border: 1px solid #ffffff14;
+  border-radius: 24px;
+  padding: 24px 26px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255,255,255,0.08);
+  opacity: 0;
+  transform: translateY(80px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease,
+    background 0.3s ease,
+    border 0.3s ease,
+    box-shadow 0.3s ease;
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+ 
+/* left card slides in from the left */
+.cardLeft {
+  transform: translateX(-40px);
+  grid-column: 1;
+}
+ 
+/* right card slides in from the right */
+
+.cardRight {
+  transform: translateX(40px);
+  grid-column: 3;
+}
+ 
+/* triggered by IntersectionObserver */
+
+.card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+ 
+/* row layout for left card: card | dot | spacer */
+
+.rowLeft .card   { order: 1; }
+.rowLeft .dotWrapper { order: 2; }
+.rowLeft .spacer { order: 3; }
+ 
+/* row layout for right card: spacer | dot | card */
+
+.rowRight .spacer    { order: 1; }
+.rowRight .dotWrapper { order: 2; }
+.rowRight .card  { order: 3; }
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #00D4FF;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+ 
+.cardMeta {
+  font-size: 16px;
+  color: #daf9ff;
+  margin: 0 0 12px;
+}
+ 
+.cardMeta span {
+  color: #00D4FF;
+}
+ 
+.cardDesc {
+  font-size: 16px;
+  color: #daf9ff;
+  line-height: 1.65;
+  margin: 0;
+}
+ 
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .line {
+    left: 16px;
+  }
+ 
+  .row {
+    grid-template-columns: 32px 1fr;
+    margin-bottom: 48px;
+  }
+ 
+  .spacer { display: none; }
+  .dotWrapper { order: 1 !important; }
+  .card       { order: 2 !important; grid-column: 2; }
+  .cardLeft,
+  .cardRight {
+    transform: translateX(30px);
+  }
+}
+ 

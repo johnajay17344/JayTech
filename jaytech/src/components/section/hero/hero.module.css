@@ -1,0 +1,253 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0 20px;
+  background: black;
+}
+
+/* Hero Wrapper - "Hi, I'm" + Name */
+.herowrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto 40px auto;
+  padding: 0 40px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* "Hi, I'm" text */
+.span {
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+  position: relative;
+  padding-right: 35px;
+  line-height: 1;
+}
+
+.button {
+  position: relative;
+  background: transparent;
+  border: none;
+  font-size: clamp(4rem, 11vw, 12rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -6px;
+  cursor: pointer;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.35);
+  white-space: nowrap;
+  padding: 0 40px;
+  font-family: var(--font-display);
+  overflow: hidden;
+  transition: -webkit-text-stroke 0.3s ease;
+}
+
+/* STATIC BORDER */
+.button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: #00d4ff;
+  box-shadow:
+    0 0 10px #00d4ff,
+    0 0 20px #00d4ff;
+  transition: opacity 0.3s ease;
+  
+}
+
+/* MOVING LIGHT */
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #00d4ff,
+    #0088ff
+  );
+  box-shadow:
+    0 0 20px #00d4ff,
+    0 0 40px #00d4ff,
+    0 0 60px #00d4ff;
+  opacity: 0;
+}
+
+/* HOVER */
+.button:hover::before {
+  opacity: 1;
+  animation: toggleMove 5s ease-in-out infinite;
+}
+
+.button:hover::after {
+  opacity: 0;
+}
+
+.button:hover {
+  animation: GradientMove 4s ease-in linear;
+}
+
+@keyframes GradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes toggleMove {
+
+  0% {
+    left: 0;
+  }
+
+  45% {
+    left: calc(100% - 6px);
+  }
+
+  50% {
+    left: calc(100% - 6px);
+  }
+
+  95% {
+    left: 0;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+/* Hero Paragraph - Tagline/Description */
+.heroPara {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 50px;
+}
+
+/* CTA Link/Button */
+.link {
+  display: inline-block;
+  padding: 14px 36px;
+  background: linear-gradient(90deg, #0088FF, #00D4FF);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-family: var(--font-display);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 136, 255, 0.3);
+}
+
+.link:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    min-height: 100vh;
+    padding: 60px 20px;
+  }
+
+  .herowrapper {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .span {
+    font-size: 24px;
+    padding-right: 16px;
+  }
+
+  .span::after {
+    height: 40px;
+    width: 2px;
+  }
+
+  .button {
+    font-size: 32px;
+    padding: 12px 28px;
+    width: auto;
+  }
+.button:hover::before {
+  opacity: none;
+  animation: none;
+}
+.button:hover{
+  animation: none;
+  opacity: none;
+}
+  .heroPara {
+    font-size: 14px;
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+  .link {
+    padding: 12px 28px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    min-height: auto;
+    padding: 40px 16px;
+  }
+
+  .herowrapper {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .span {
+    font-size: 18px;
+    padding-right: 0;
+  }
+
+  .span::after {
+    display: none;
+  }
+
+  .button {
+    font-size: 40px;
+    letter-spacing: 2px;
+    padding: 1px 2px;
+    border-width: 1.5px;
+    animation: none;
+  }
+
+  .heroPara {
+    font-size: 11px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .link {
+    padding: 10px 24px;
+    font-size: 11px;
+  }
+}

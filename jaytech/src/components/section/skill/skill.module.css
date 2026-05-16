@@ -1,0 +1,108 @@
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: none;
+  overflow: hidden;
+  padding: 120px 10px 80px 100px;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin: 0 auto;
+}
+
+/* CATEGORY BLOCK */
+.block {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* CATEGORY TITLE */
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: -2px;
+  line-height: 1;
+  white-space: nowrap;
+  min-width: 160px;
+}
+
+/* LOGO GRID */
+.logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 40px;
+  flex: 1;
+}
+
+/* WRAPPER AROUND ICON + TEXT */
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* ICON */
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* TABLET */
+@media (max-width: 1200px) {
+  .block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .logos {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 30px;
+  }
+
+  .container {
+    gap: 60px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    letter-spacing: -1px;
+    white-space: normal;
+  }
+
+  .logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .skillItem {
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+}

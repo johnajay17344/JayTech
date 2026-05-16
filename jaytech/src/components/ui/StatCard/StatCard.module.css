@@ -1,0 +1,35 @@
+.statCard {
+  background: rgba(0, 136, 255, 0.05);
+  border: 0.5px solid rgba(0, 136, 255, 0.2);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.statCard:hover {
+  border-color: rgba(0, 136, 255, 0.5);
+  background: rgba(0, 136, 255, 0.08);
+}
+
+.icon {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.number {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #0088FF, #00D4FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+}
+
+.label {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
