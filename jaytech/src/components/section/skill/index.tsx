@@ -1,11 +1,34 @@
+"use client"
+
 import styles from "./skill.module.css"
 import { Skill } from "./data"
 import Image from "next/image"
+import { useEffect, useRef } from "react";
 import MatrixRain from "@/components/ui/MatrixRain";
 
 
 
 export default function SkillSection(){
+     const skillRefs = useRef<(HTMLDivElement | null)[]>([]);    
+      useEffect(() => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                entry.target.classList.add(styles.visible);
+                } else {
+                entry.target.classList.remove(styles.visible);
+                }
+            });
+          },
+          { threshold: 0.15 }
+        );
+        skillRefs.current.forEach((ref) => {
+          if (ref) observer.observe(ref);
+        });
+    
+        return () => observer.disconnect();
+      }, []);
     return(
         <section className={styles.section}>
              <MatrixRain />

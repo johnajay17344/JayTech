@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:black;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin: 0 0 48px;
+  text-align: center;
+}
+
+/* ── Tablet ───────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .container {
+    padding: 60px 32px;
+  }
+}
+
+/* ── Mobile ───────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .container {
+    padding: 48px 16px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 0.88rem;
+    margin-bottom: 32px;
+  }
+}

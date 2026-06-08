@@ -2,6 +2,8 @@ import HeroSection from "@/components/section/hero";
 import AboutSection from "@/components/section/about";
 import JourneySection from "@/components/section/journey";
 import SkillSection from "@/components/section/skill"
+import GithubPage from "@/components/section/githubs";
+import ProjectsSection from "@/components/section/projects";
 export default function Page(){
     return(
         <div>
@@ -9,6 +11,8 @@ export default function Page(){
             <AboutSection/>
             <JourneySection/>
             <SkillSection />
+            <GithubPage/>
+            <ProjectsSection/>
         </div>
     )
 }

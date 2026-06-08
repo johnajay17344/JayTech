@@ -1,0 +1,357 @@
+/* ── Entry animations ─────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(45, 212, 168, 0.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(45, 212, 168, 0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Wrapper ──────────────────────────────────────────────────────────────── */
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  animation: fadeIn 0.5s ease both;
+}
+
+/* ── Heading ──────────────────────────────────────────────────────────────── */
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 0.875rem;
+  color:black;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.5s 0.1s ease both;
+}
+
+/* ── Stat cards ───────────────────────────────────────────────────────────── */
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #b5b5b5;
+  border-radius: 10px;
+  gap: 6px;
+  animation: fadeUp 0.5s ease both;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* stagger each stat card */
+.statCard:nth-child(1) { animation-delay: 0.15s; }
+.statCard:nth-child(2) { animation-delay: 0.22s; }
+.statCard:nth-child(3) { animation-delay: 0.29s; }
+.statCard:nth-child(4) { animation-delay: 0.36s; }
+
+.statCard:hover {
+  border-color: #00D4FF;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.15);
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00D4FF;
+  animation: countUp 0.5s ease both;
+  animation-delay: inherit;
+  /* shimmer on the number */
+  background: linear-gradient(90deg, #00D4FF 25%, #7fffd4 50%, #00D4FF 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statCard:hover .statValue {
+  animation: shimmer 1.2s linear infinite;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: #888;
+  text-align: center;
+}
+
+/* ── Section ──────────────────────────────────────────────────────────────── */
+.section {
+  border: 1px solid #b5b5b5;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.5s 0.4s ease both;
+  transition: border-color 0.25s ease;
+}
+
+.section:hover {
+  border-color: rgba(0, 212, 255, 0.4);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #00D4FF;
+}
+
+.sectionHeader a {
+  font-size: 0.8rem;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.sectionHeader a:hover {
+  color: #00D4FF;
+}
+
+/* ── Activity list ────────────────────────────────────────────────────────── */
+.activityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.activityItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #b5b5b5;
+  border-radius: 8px;
+  animation: slideIn 0.4s ease both;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+/* stagger activity rows */
+.activityItem:nth-child(1) { animation-delay: 0.50s; }
+.activityItem:nth-child(2) { animation-delay: 0.58s; }
+.activityItem:nth-child(3) { animation-delay: 0.66s; }
+.activityItem:nth-child(4) { animation-delay: 0.74s; }
+.activityItem:nth-child(5) { animation-delay: 0.82s; }
+
+.activityItem:hover {
+  border-color: #00D4FF;
+  background: rgba(0, 212, 255 , 0.04);
+  transform: translateX(4px);
+}
+
+.activityIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #00D4FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  animation: pulse 2.5s ease infinite;
+}
+
+.activityItem:hover .activityIcon {
+  transform: scale(1.12);
+  animation: none;
+}
+
+.activityText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.activityMain {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activityDate {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.activityLink {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.15s ease;
+}
+
+.activityLink:hover {
+  color: #00D4FF;
+}
+
+/* ── Languages ────────────────────────────────────────────────────────────── */
+.langTitle {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #00D4FF;
+}
+
+.langGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.langCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #b5b5b5;
+  border-radius: 10px;
+  gap: 4px;
+  animation: fadeUp 0.4s ease both;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.langCard:nth-child(1) { animation-delay: 0.55s; }
+.langCard:nth-child(2) { animation-delay: 0.62s; }
+.langCard:nth-child(3) { animation-delay: 0.69s; }
+.langCard:nth-child(4) { animation-delay: 0.76s; }
+.langCard:nth-child(5) { animation-delay: 0.83s; }
+.langCard:nth-child(6) { animation-delay: 0.90s; }
+
+.langCard:hover {
+  border-color: #00D4FF;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 212, 255, 0.15);
+}
+
+.langName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #00D4FF ;
+  transition: letter-spacing 0.2s ease;
+}
+
+.langCard:hover .langName {
+  letter-spacing: 0.03em;
+}
+
+.langCount {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* ── 768px ────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .statGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .langGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sectionHeader a {
+    font-size: 0.75rem;
+  }
+}
+
+/* ── 450px ────────────────────────────────────────────────────────────────── */
+@media (max-width: 450px) {
+  .wrapper {
+    width: 100%;
+    padding: 1.25rem 1rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .statGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .statValue {
+    font-size: 1.25rem;
+  }
+
+  .statLabel {
+    font-size: 0.7rem;
+  }
+
+  .statCard {
+    padding: 0.75rem;
+  }
+
+  .langGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .langCard {
+    padding: 0.75rem;
+  }
+
+  .activityMain {
+    font-size: 0.8rem;
+  }
+
+  .activityItem {
+    padding: 8px 10px;
+  }
+
+  .activityIcon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .sectionHeader {
+    font-size: 0.85rem;
+  }
+}

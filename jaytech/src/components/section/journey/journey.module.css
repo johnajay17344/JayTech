@@ -144,21 +144,42 @@
  
 /* ── Responsive ── */
 @media (max-width: 700px) {
+  .section {
+    padding: 60px 16px 80px;
+  }
+
+  /* hide the vertical line on mobile */
   .line {
-    left: 16px;
+    display: none;
   }
- 
+
+  /* single column — no grid, just stacked cards */
   .row {
-    grid-template-columns: 32px 1fr;
-    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
   }
- 
-  .spacer { display: none; }
-  .dotWrapper { order: 1 !important; }
-  .card       { order: 2 !important; grid-column: 2; }
+
+  /* hide dot and spacer entirely */
+  .spacer,
+  .dotWrapper {
+    display: none;
+  }
+
+  /* all cards full width */
+  .card {
+    width: 100%;
+    grid-column: unset;
+    transform: translateY(40px);
+  }
+
   .cardLeft,
   .cardRight {
-    transform: translateX(30px);
+    transform: translateY(40px);
+  }
+
+  .card.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
- 

@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: none;
+  background: black;
   overflow: hidden;
   padding: 120px 10px 80px 100px;
 }
@@ -20,7 +20,7 @@
 .block {
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 200px;
 }
 
 /* CATEGORY TITLE */
@@ -79,11 +79,15 @@
 /* MOBILE */
 @media (max-width: 768px) {
   .section {
-    padding: 80px 30px;
+    padding: 80px 24px;
   }
 
   .container {
     gap: 60px;
+  }
+
+  .block {
+    gap: 28px;
   }
 
   .title {
@@ -94,7 +98,8 @@
 
   .logos {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    column-gap: 16px;
+    row-gap: 28px;
   }
 
   .skillItem {
@@ -104,5 +109,41 @@
   .logo {
     width: 32px;
     height: 32px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 450px) {
+  .section {
+    padding: 60px 16px;
+  }
+
+  .container {
+    gap: 44px;
+  }
+
+  .block {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    letter-spacing: -0.5px;
+  }
+
+  .logos {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 22px;
+  }
+
+  .skillItem {
+    font-size: 0.875rem;
+    gap: 8px;
+  }
+
+  .logo {
+    width: 26px;
+    height: 26px;
   }
 }

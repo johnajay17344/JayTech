@@ -20,9 +20,9 @@ interface Particle {
 }
 
 const defaultConfig: ParticlesConfig = {
-  particleCount: 10,
+  particleCount: 10000,
   particleColors: ['#0088FF', '#00D4FF', '#0066CC', '#00B8D4'],
-  speed: 1,
+  speed: 100,
   opacity: 0.5,
 };
 

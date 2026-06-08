@@ -6,7 +6,7 @@ import { journeyData } from "./data";
 
 
 
-export default function Journey() {
+export   default function Journey() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -22,8 +22,6 @@ export default function Journey() {
       },
       { threshold: 0.15 }
     );
-
-
     cardRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref);
     });

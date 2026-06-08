@@ -28,12 +28,13 @@ export const Skill:SkillProps[]= [
             src:"/icons/html5-original.svg",
             name:"html"
         },
+        
         {
             src:"/icons/css3-original.svg",
             name:"css"
         },
         {
-            src:"/icons/tailwindcss-plain.svg",
+            src:"/icons/tailwindcss-original.svg",
             name:"tailwindcss"
         },
         {
@@ -67,13 +68,10 @@ export const Skill:SkillProps[]= [
             name:"python"
         },
         {
-            src:"/icons/django-original.svg",
+            src:"/icons/django-plain.svg",
             name:"django"
         },
-        {
-            src:"/icons/flask-original.svg",
-            name:"flask"
-        }]
+        ]
     },
     {
         title:"DATABASE",
@@ -97,11 +95,7 @@ export const Skill:SkillProps[]= [
             name:"git"
         },
         {
-            src:"/icons/github-original.svg",
-            name:"github"
-        },
-        {
-            src:"/icons/amazonwebservices-original.svg",
+            src:"/icons/amazonwebservices-original-wordmark.svg",
             name:"aws"
         },
         {
