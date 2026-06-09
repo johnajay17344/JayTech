@@ -1,31 +1,25 @@
 import styles from "./about.module.css";
-import SocialIcons from "@/components/ui/SocialIcons/SocialIcons";
-export default function Hero() {
+import { About } from "./data";
+import Button from "@/components/ui/Button/Button";
+import SocialIcons from "@/components/ui/SocialIcons/SocialIcons"
+
+export default function AboutSection() {
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
         <h1 className={styles.title}>
-            I&apos;m <span>John Akinlade</span>, a Full Stack Developer
-            [Backend-Centric] & DevOps Engineer building scalable and efficient systems.
+          {About.header}
           </h1>
-
-          <p className={styles.text}>
-            I&apos;m currently pursuing my masters in Computational Chemistry while
-            transitioning into tech as a full-stack developer. I specialize in
-            backend development and modern web technologies, transforming ideas
-            into scalable, production-ready applications.
+          {About.paragraph.map((text, index) => (
+          <p key={index} className={styles.text}>
+            {text}
           </p>
+        ))}
 
-          <p className={styles.text}>
-            I&apos;m passionate about <span>Web Development, APIs, DevOps, and Blockchain</span>,
-            constantly learning and building projects that improve my problem-solving
-            and software engineering skills.
-          </p>
-        <SocialIcons />
-    
-        <button className={styles.downloadBtn}>
-          ↓ Download
-        </button>
+        <SocialIcons />   
+        <Button href={About.href} className={styles.downloadBtn} download={true}>
+          {About.ButtonText}
+        </Button>
       </div>
     </section>
   );

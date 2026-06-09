@@ -14,6 +14,8 @@ const spaceMono = Space_Mono({
   variable: '--font-body',
 });
 
+
+
 export const metadata: Metadata = {
   title: 'JayTech | Full-Stack Developer',
   description: 'Building modern web applications with Next.js, TypeScript, and scalable backend systems',

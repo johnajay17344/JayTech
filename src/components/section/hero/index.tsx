@@ -1,6 +1,6 @@
 import styles from "./hero.module.css"
-import Link from "next/link"
 import ParticlesBackground from "../../ui/ParticlesBackground/ParticlesBackground"
+import Button from "@/components/ui/Button/Button"
 
 export default function HeroSection(){
     return(
@@ -17,24 +17,19 @@ export default function HeroSection(){
                     Hi, I&apos;m
                 </span>
                 <button className={styles.button}>
-  <span data-text="JOHN AJ">
-    JOHN A JAY
-  </span>
-</button>
+                    <span data-text="JOHN AJ">
+                        JOHN A JAY
+                    </span>
+                    </button>
             </h2>
             
             <p className={styles.heroPara}>
-                Hey, I&apos;m John Adekunle, a Full Stack Developer.
-                I&apos;ve been working with Next.js and Node for the past three years, 
-                building web applications that are fast, scalable and user-friendly.
-                I like solving problems, learning new things, and experimenting with 
-                different technologies. When I&apos;m not coding, I&apos;m probably working on a 
-                side project or exploring something new
+                An aspiring Full Stack Developer passionate about building sleek web experiences.
             </p>
             
-            <Link href="#projects" className={styles.link}>
+            <Button href="/projects" className={styles.link}>
               VIEW PROJECTS
-            </Link>
+            </Button>
             </div>
         </section>
     )
