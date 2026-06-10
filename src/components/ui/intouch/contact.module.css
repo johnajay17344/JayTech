@@ -30,7 +30,7 @@
 }
 
 .required {
-  color: #00c896;
+  color: #0088FF;
   margin-left: 2px;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .input:focus {
-  border-color: rgba(0, 200, 150, 0.5);
+  border-color: #0088FF;
   box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.07);
 }
 
@@ -113,7 +113,7 @@
 }
 
 .textarea:focus {
-  border-color: rgba(0, 200, 150, 0.5);
+  border-color: #0088FF;
   box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.07);
 }
 
@@ -128,7 +128,7 @@
 /* SUBMIT BUTTON */
 .button {
   width: 100%;
-  background: #00c896;
+  background: #0088FF;
   color: #000;
   font-size: 0.875rem;
   font-weight: 600;
@@ -142,7 +142,7 @@
 }
 
 .button:hover:not(:disabled) {
-  background: #00b386;
+  background: #0088ffd2;
 }
 
 .button:disabled {
