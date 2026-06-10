@@ -27,7 +27,7 @@ export default function HeroSection(){
                 An aspiring Full Stack Developer passionate about building sleek web experiences.
             </p>
             
-            <Button href="/projects" className={styles.link}>
+            <Button href="#projects" className={styles.link}>
               VIEW PROJECTS
             </Button>
             </div>

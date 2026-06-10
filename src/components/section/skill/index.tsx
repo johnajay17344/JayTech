@@ -35,7 +35,7 @@ export default function SkillSection(){
             <div className={styles.container}>
                 {Skill.map( (item,index)=>
                 (
-                    <div className={styles.block} key={index}>
+                    <div className={styles.block} key={index} ref={(el) => { skillRefs.current[index] = el; }}>
                     <div>
                         <h3 className={styles.title}>
                             {item.title}
