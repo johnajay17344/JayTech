@@ -5,6 +5,7 @@ import SkillSection from "@/components/section/skill"
 import GithubPage from "@/components/section/githubs";
 import ProjectsSection from "@/components/section/projects";
 import Forms from "@/components/section/forms";
+import Footer from "@/components/section/footer";
 export default function Page(){
     return(
         <div>
@@ -15,6 +16,7 @@ export default function Page(){
             <GithubPage/>
             <ProjectsSection/>
             <Forms/>
+            <Footer/>
         </div>
     )
 }
