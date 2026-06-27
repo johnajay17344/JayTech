@@ -17,7 +17,7 @@ export interface CardProps {
   title: string
   descriotion: string   
   component: IconProps[]
-  button: LinksProps
+  button?: LinksProps
   secondaryButton: LinksProps
 }
 
@@ -36,5 +36,20 @@ export const cards: CardProps[] = [
   ],
   button: { href: "https://www.unsongmusic.com/" },
   secondaryButton: { href: "https://github.com/UnsongMusic/frontend-website-v2" },
+  },
+  
+  {
+  Image: { src: "/images/user-auth.png", alt: "user-auth" },
+  title: " Authentication REST API",
+
+  descriotion: "A RESTful authentication API built with Node.js, Express, and TypeScript featuring secure user registration and login. Passwords are hashed using bcrypt and sessions are managed with JSON Web Tokens (JWT).User data is stored and managed in MongoDB using Mongoose.",
+
+  component: [
+    { icon: { src: "/icons/typescript-original.svg", alt: "typescript" }, test: "typescript" },
+    { icon: { src: "/icons/nodejs-original.svg", alt: "nodejs" }, test: "nodejs" },
+    { icon: { src: "/icons/express-original.svg", alt: "Express" }, test: "Express" },
+    { icon: { src: "/icons/mongodb-original.svg", alt: "mongodb" }, test: "mongodb" },
+  ],
+  secondaryButton: { href: "https://github.com/johnajay17344/loginPage" },
   },
  ]

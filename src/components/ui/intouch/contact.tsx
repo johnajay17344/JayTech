@@ -47,7 +47,6 @@ export default function Contact() {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-
       {/* Name row */}
       <div className={styles.nameRow}>
         <div className={styles.field}>
@@ -79,7 +78,6 @@ export default function Contact() {
           />
         </div>
       </div>
-
       {/* Email */}
       <div className={styles.field}>
         <label className={styles.label}>
@@ -95,7 +93,6 @@ export default function Contact() {
           required
         />
       </div>
-
       {/* Subject */}
       <div className={styles.field}>
         <label className={styles.label}>
