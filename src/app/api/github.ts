@@ -1,9 +1,7 @@
 import axios from "axios"
 import {GitHubStats,GitHubActivity,GitHubLanguage} from "@/types/github"
 
-const USERNAME = process.env.GITHUB_USERNAME;
-
-const BASE = `https://api.github.com/users/${USERNAME}`;
+const BASE = "https://api.github.com/users/johnajay17344"
 
 const githubAccess = {
   userProfile:  `${BASE}`,
@@ -14,16 +12,13 @@ const githubAccess = {
 
 
 const github = axios.create({
-  baseURL: "https://api.github.com",
-  timeout: 10000,
   headers: {
     Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-    Accept: "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
-}
+     Accept: "application/vnd.github+json",
+    "User-Agent": "NextJS-App",
+  },
 })
 console.log(`Bearer ${process.env.GITHUB_TOKEN}`);
-
 
 
 
@@ -42,6 +37,7 @@ export async function fetchStats(): Promise<GitHubStats> {
   const recentCommits = eventsRes.data.filter(
     (e: { type: string }) => e.type === "PushEvent"
   ).length
+
 
   return {
     publicRepos:   profileRes.data.public_repos,
