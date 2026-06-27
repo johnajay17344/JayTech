@@ -36,7 +36,7 @@ export default function Card() {
             </ul>
 
             <div className={styles.actions}>
-              <Link className={`${styles.btn} ${styles.btnPrimary}`} href={item.button.href}>
+              <Link className={`${styles.btn} ${styles.btnPrimary}`} href ={item.button.href}>
                 Live Demo
               </Link  >
               <Link className={`${styles.btn} ${styles.btnSecondary}`} href={item.secondaryButton.href}>

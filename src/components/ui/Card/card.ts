@@ -17,7 +17,7 @@ export interface CardProps {
   title: string
   descriotion: string   
   component: IconProps[]
-  button?: LinksProps
+  button: LinksProps
   secondaryButton: LinksProps
 }
 
@@ -50,6 +50,7 @@ export const cards: CardProps[] = [
     { icon: { src: "/icons/express-original.svg", alt: "Express" }, test: "Express" },
     { icon: { src: "/icons/mongodb-original.svg", alt: "mongodb" }, test: "mongodb" },
   ],
+    button: { href: "/" },
   secondaryButton: { href: "https://github.com/johnajay17344/loginPage" },
   },
  ]
